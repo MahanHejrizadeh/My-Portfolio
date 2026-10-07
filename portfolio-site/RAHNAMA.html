@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>راهنمای راه‌اندازی پرتفولیو</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap">
+<style>
+:root { --bg:#0e1015; --card:#161922; --line:#262a36; --fg:#eef0f5; --dim:#9aa1b2; --accent:#8fb0ff; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font-family:"Vazirmatn", Tahoma, system-ui, sans-serif; line-height:2; padding:32px 16px 64px; }
+main { max-width:760px; margin-inline:auto; }
+h1 { font-size:28px; margin:0 0 4px; }
+.lead { color:var(--dim); margin:0 0 28px; }
+ol { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; counter-reset:s; }
+li { counter-increment:s; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px 16px 18px; display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; }
+li::before { content:counter(s, persian); font-weight:700; font-size:18px; width:36px; height:36px; border-radius:50%; display:grid; place-items:center; background:var(--accent); color:#0b0d12; line-height:1; }
+h2 { font-size:17px; margin:0 0 2px; }
+p { margin:0; color:#cfd4e2; }
+.en { direction:ltr; unicode-bidi:isolate; display:inline-block; background:#0b0d12; border:1px solid var(--line); border-radius:6px; padding:0 7px; font-family:ui-monospace, Menlo, Consolas, monospace; font-size:13px; line-height:1.9; color:var(--fg); }
+.box { direction:ltr; text-align:left; background:#0b0d12; border:1px solid var(--line); border-radius:10px; padding:8px 12px; margin:8px 0; font-family:ui-monospace, Menlo, Consolas, monospace; font-size:13px; line-height:1.7; overflow-x:auto; user-select:all; }
+.note { margin-top:24px; padding:14px 18px; border-radius:14px; border:1px dashed var(--line); color:var(--dim); }
+</style>
+</head>
+<body>
+<main>
+  <h1>راهنمای راه‌اندازی پرتفولیو</h1>
+  <p class="lead">با این هشت مرحله، سایت را منتشر می‌کنی و از پنل ادمین همه‌چیز را تغییر می‌دهی. هزینه‌ای ندارد.</p>
+
+  <ol>
+    <li><div>
+      <h2>ساخت مخزن در گیت‌هاب</h2>
+      <p>در سایت <span class="en">github.com</span> حساب بساز یا وارد شو. روی <span class="en">New repository</span> بزن و یک نام مثل <span class="en">my-portfolio</span> بده. گزینه‌ی <span class="en">Public</span> را انتخاب کن و مخزن را بساز. عمومی بودن مخزن ساده‌ترین حالت است و ورود به پنل ادمین در آن کمتر مشکل دارد.</p>
+    </div></li>
+
+    <li><div>
+      <h2>بارگذاری فایل‌ها</h2>
+      <p>فایل <span class="en">portfolio-site.zip</span> را روی کامپیوتر از حالت فشرده دربیاور. در صفحه‌ی مخزن روی <span class="en">uploading an existing file</span> بزن. همه‌ی فایل‌ها و پوشه‌های داخل آن را بکش و رها کن: <span class="en">index.html</span>، <span class="en">content.json</span>، <span class="en">admin</span>، <span class="en">vendor</span> و <span class="en">assets</span>. خود فایل فشرده را بارگذاری نکن. بعد روی <span class="en">Commit changes</span> بزن.</p>
+    </div></li>
+
+    <li><div>
+      <h2>انتشار در نتلیفای</h2>
+      <p>در <span class="en">netlify.com</span> با همان حساب گیت‌هاب وارد شو. این گزینه‌ها را به ترتیب بزن: <span class="en">Add new site</span>، بعد <span class="en">Import an existing project</span>، بعد <span class="en">GitHub</span> و مخزن خودت. فیلد <span class="en">Build command</span> را خالی بگذار. در فیلد <span class="en">Publish directory</span> یک نقطه بنویس یا آن را خالی بگذار. بعد روی <span class="en">Deploy</span> بزن. چند ثانیه بعد آدرسی شبیه <span class="en">my-portfolio.netlify.app</span> می‌گیری. این آدرس را در مراحل بعد لازم داری.</p>
+    </div></li>
+
+    <li><div>
+      <h2>تنظیم فایل ادمین</h2>
+      <p>در گیت‌هاب فایل <span class="en">admin/config.yml</span> را باز کن و با آیکون مداد ویرایشش کن. دو مقدار را عوض کن. مقدار اول، خط <span class="en">repo</span> است:</p>
+      <div class="box">repo: YOUR_GITHUB_USERNAME/my-portfolio</div>
+      <p>به‌جای <span class="en">YOUR_GITHUB_USERNAME</span> نام کاربری گیت‌هاب خودت را بنویس. مقدار دوم، خط <span class="en">site_url</span> است. آدرس نتلیفای خودت را در آن بنویس، با <span class="en">https://</span> در ابتدا. بعد <span class="en">Commit changes</span> را بزن.</p>
+    </div></li>
+
+    <li><div>
+      <h2>ساخت اپ ورود در گیت‌هاب</h2>
+      <p>در گیت‌هاب این مسیر را برو: <span class="en">Settings</span>، بعد <span class="en">Developer settings</span>، بعد <span class="en">OAuth Apps</span>، بعد <span class="en">New OAuth App</span>. فیلد <span class="en">Application name</span> هر نامی می‌تواند باشد. در <span class="en">Homepage URL</span> آدرس سایت نتلیفای را بنویس. در <span class="en">Authorization callback URL</span> دقیقاً این آدرس را بنویس:</p>
+      <div class="box">https://api.netlify.com/auth/done</div>
+      <p>روی <span class="en">Register application</span> بزن. بعد روی <span class="en">Generate a new client secret</span> بزن. مقدار <span class="en">Client ID</span> و <span class="en">Client Secret</span> را کپی کن. رمز فقط یک بار نمایش داده می‌شود.</p>
+    </div></li>
+
+    <li><div>
+      <h2>اتصال اپ ورود به نتلیفای</h2>
+      <p>در نتلیفای سایتت را باز کن و برو به <span class="en">Site configuration</span>، بعد <span class="en">Access &amp; security</span> و بخش <span class="en">OAuth</span>. روی <span class="en">Install provider</span> بزن و <span class="en">GitHub</span> را انتخاب کن. مقدارهای <span class="en">Client ID</span> و <span class="en">Client Secret</span> را وارد و ذخیره کن.</p>
+    </div></li>
+
+    <li><div>
+      <h2>ورود به پنل ادمین</h2>
+      <p>آدرس سایتت را باز کن و در انتهایش <span class="en">/admin/</span> بگذار. مثلاً:</p>
+      <div class="box">https://my-portfolio.netlify.app/admin/</div>
+      <p>روی <span class="en">Login with GitHub</span> بزن و اجازه بده. بعد از ورود فرم‌های ویرایش را می‌بینی: متن‌ها، پروژه‌ها، لینک‌ها، رنگ‌ها، فونت و افکت‌ها.</p>
+    </div></li>
+
+    <li><div>
+      <h2>ویرایش و انتشار تغییرها</h2>
+      <p>داخل پنل مثلاً بخش پروژه‌ها را باز کن و عنوان و لینک را عوض کن. برای فایل رزومه و عکس، فیلد مربوط را بزن و فایل را بارگذاری کن. بالای صفحه روی <span class="en">Save</span> بزن، بعد <span class="en">Publish</span> و <span class="en">Publish now</span>. بین چند ثانیه تا یک دقیقه بعد، نتلیفای سایت را خودکار به‌روز می‌کند. برای دامنه‌ی شخصی در نتلیفای بخش <span class="en">Domain management</span> را باز کن.</p>
+    </div></li>
+  </ol>
+
+  <p class="note">اگر در مرحله‌ای خطا دیدی، متن خطا یا عکس صفحه را بفرست تا همان‌جا حلش کنیم.</p>
+</main>
+</body>
+</html>

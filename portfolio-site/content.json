@@ -1,0 +1,162 @@
+{
+  "name": "Noa Lindqvist",
+  "handle": "@noalindqvist",
+  "greeting": "Hello!",
+  "intro": "I'm Noa",
+  "bio": "Product designer with 8+ years of experience in mobile apps, websites and 3D interfaces. I design calm, tactile products and build them in code.",
+  "tags": [
+    "29 y.o.",
+    "UX/UI",
+    "Web 3D",
+    "Three.js",
+    "Figma"
+  ],
+  "city": "Rotterdam, NL",
+  "timezone": "Europe/Amsterdam",
+  "email": "hello@noa.example",
+  "cv": "",
+  "photo": "",
+  "badge_text": "noa",
+  "pass_label": "Digital Pass",
+  "pass_sub": "Made with Three.js",
+  "socials": [
+    {
+      "label": "YouTube",
+      "url": "",
+      "icon": "youtube"
+    },
+    {
+      "label": "Instagram",
+      "url": "",
+      "icon": "instagram"
+    },
+    {
+      "label": "TikTok",
+      "url": "",
+      "icon": "tiktok"
+    },
+    {
+      "label": "Spark",
+      "url": "",
+      "icon": "spark"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "",
+      "icon": "linkedin"
+    },
+    {
+      "label": "X",
+      "url": "",
+      "icon": "x"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Interface Craft Course",
+      "subtitle": "Enrol in my online course",
+      "url": "",
+      "color_a": "#2dd4a8",
+      "color_b": "#1a3a8a",
+      "image": ""
+    },
+    {
+      "title": "Gridwork.studio",
+      "subtitle": "Free layout kits and 3D scenes",
+      "url": "",
+      "color_a": "#6ee7ff",
+      "color_b": "#ff5fa8",
+      "image": ""
+    },
+    {
+      "title": "Soft-body icons",
+      "subtitle": "Project case",
+      "url": "",
+      "color_a": "#e8e8ee",
+      "color_b": "#3a3d46",
+      "image": ""
+    },
+    {
+      "title": "Pebble. Budget app",
+      "subtitle": "Project case",
+      "url": "",
+      "color_a": "#ff5fa8",
+      "color_b": "#3b0f4d",
+      "image": ""
+    },
+    {
+      "title": "Tide + Co",
+      "subtitle": "Project case",
+      "url": "",
+      "color_a": "#8fb0ff",
+      "color_b": "#e6ecff",
+      "image": ""
+    }
+  ],
+  "labels": {
+    "contact": "Contact me",
+    "cv": "CV",
+    "projects_title": "Latest projects",
+    "hint": "Drag the badge",
+    "local_time": "Local time"
+  },
+  "show": {
+    "handle": true,
+    "tags": true,
+    "location": true,
+    "map": true,
+    "contact": true,
+    "cv": true,
+    "badge_hint": true,
+    "badge_caption": true,
+    "socials": true,
+    "honeycomb": true,
+    "projects": true
+  },
+  "theme": {
+    "font": "DM Sans",
+    "title_scale": 1,
+    "corner_radius": 28,
+    "show_dots": true,
+    "ground_a": "#0a2a8c",
+    "ground_b": "#3b1a8a",
+    "ground_c": "#861a5c",
+    "ground_d": "#b3122c",
+    "ground_image": "",
+    "window": "#050506",
+    "panel": "#0e0f12",
+    "panel_2": "#15161a",
+    "line": "#24262c",
+    "text": "#f4f5f7",
+    "text_dim": "#9a9ea8",
+    "accent": "#8fb0ff",
+    "stage_top": "#2f9e5a",
+    "stage_mid": "#1d3d9a",
+    "stage_bottom": "#0a0b10",
+    "orb_a": "#5ec8ff",
+    "orb_b": "#7a5cff",
+    "orb_c": "#ff5fa8"
+  },
+  "layout": {
+    "max_width": 1760,
+    "max_height": 1120,
+    "badge_position": "center",
+    "direction": "ltr"
+  },
+  "effects": {
+    "tilt_strength": 1,
+    "idle_motion": true,
+    "badge_glass_color": "#07090f",
+    "badge_glass_opacity": 0.74,
+    "badge_sheen": 0.5,
+    "badge_sway": 1,
+    "badge_intro": true,
+    "badge_size": 1,
+    "badge_follow_pointer": 1
+  },
+  "seo": {
+    "title": "",
+    "description": "",
+    "favicon": ""
+  }
+}

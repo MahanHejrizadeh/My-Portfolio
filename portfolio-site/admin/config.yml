@@ -1,0 +1,153 @@
+# Decap CMS admin panel. Open /admin/ on your site after deploying.
+# Change `repo` to YOUR_GITHUB_USERNAME/YOUR_REPO_NAME before you push.
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  branch: main
+
+media_folder: assets
+public_folder: /assets
+site_url: https://YOUR-SITE.netlify.app
+locale: en
+
+collections:
+  - name: site
+    label: Portfolio
+    files:
+      - name: content
+        label: Site content
+        file: content.json
+        format: json
+        fields:
+          - { label: Full name, name: name, widget: string }
+          - { label: Handle (small text above the title), name: handle, widget: string, required: false }
+          - { label: Greeting (first line), name: greeting, widget: string }
+          - { label: Intro (second line), name: intro, widget: string }
+          - { label: Bio, name: bio, widget: text }
+          - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string } }
+          - { label: City, name: city, widget: string, required: false }
+          - { label: Time zone, name: timezone, widget: string, hint: "IANA name, for example Europe/Amsterdam or Asia/Tehran" }
+          - { label: Email, name: email, widget: string, required: false }
+          - { label: CV (PDF), name: cv, widget: file, required: false }
+          - { label: Badge photo, name: photo, widget: image, required: false, hint: "Portrait, about 3:4. Leave empty to use the drawn avatar." }
+          - { label: Badge big text, name: badge_text, widget: string, required: false }
+          - { label: Badge caption, name: pass_label, widget: string, required: false }
+          - { label: Badge sub caption, name: pass_sub, widget: string, required: false }
+          - label: Social links
+            name: socials
+            widget: list
+            max: 6
+            required: false
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Name, name: label, widget: string }
+              - { label: URL, name: url, widget: string, required: false, hint: "Full link starting with https://" }
+              - label: Icon
+                name: icon
+                widget: select
+                options: [youtube, instagram, tiktok, linkedin, x, github, dribbble, behance, spark]
+          - label: Projects
+            name: projects
+            widget: list
+            required: false
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string, required: false }
+              - { label: URL, name: url, widget: string, required: false }
+              - { label: Thumbnail image, name: image, widget: image, required: false }
+              - { label: Thumbnail color A, name: color_a, widget: color, required: false }
+              - { label: Thumbnail color B, name: color_b, widget: color, required: false }
+
+          - label: Texts and button labels
+            name: labels
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Contact button, name: contact, widget: string }
+              - { label: CV button, name: cv, widget: string }
+              - { label: Projects title, name: projects_title, widget: string }
+              - { label: Badge hint, name: hint, widget: string }
+              - { label: Local time suffix, name: local_time, widget: string }
+
+          - label: Show or hide sections
+            name: show
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Handle, name: handle, widget: boolean, default: true }
+              - { label: Tags, name: tags, widget: boolean, default: true }
+              - { label: Location card, name: location, widget: boolean, default: true }
+              - { label: Map inside location card, name: map, widget: boolean, default: true }
+              - { label: Contact button, name: contact, widget: boolean, default: true }
+              - { label: CV button, name: cv, widget: boolean, default: true }
+              - { label: Badge hint, name: badge_hint, widget: boolean, default: true }
+              - { label: Badge caption, name: badge_caption, widget: boolean, default: true }
+              - { label: Social links panel, name: socials, widget: boolean, default: true }
+              - { label: Honeycomb lines, name: honeycomb, widget: boolean, default: true }
+              - { label: Projects panel, name: projects, widget: boolean, default: true }
+
+          - label: Colors, font and style
+            name: theme
+            widget: object
+            collapsed: true
+            fields:
+              - label: Font
+                name: font
+                widget: select
+                options: [DM Sans, Inter, Manrope, Sora, Outfit, Poppins, Space Grotesk, Plus Jakarta Sans, Vazirmatn, Playfair Display, Syne, Unbounded]
+              - { label: Title size, name: title_scale, widget: number, value_type: float, min: 0.5, max: 1.6, step: 0.05, default: 1 }
+              - { label: Corner radius, name: corner_radius, widget: number, min: 0, max: 60, default: 28 }
+              - { label: Dotted panel texture, name: show_dots, widget: boolean, default: true }
+              - { label: Background top, name: ground_a, widget: color }
+              - { label: Background upper middle, name: ground_b, widget: color }
+              - { label: Background lower middle, name: ground_c, widget: color }
+              - { label: Background bottom, name: ground_d, widget: color }
+              - { label: Background image (replaces the gradient), name: ground_image, widget: image, required: false }
+              - { label: Outer frame, name: window, widget: color }
+              - { label: Panels, name: panel, widget: color }
+              - { label: Panels (lighter), name: panel_2, widget: color }
+              - { label: Lines and borders, name: line, widget: color }
+              - { label: Text, name: text, widget: color }
+              - { label: Dim text, name: text_dim, widget: color }
+              - { label: Accent (glow and highlights), name: accent, widget: color }
+              - { label: Badge area top glow, name: stage_top, widget: color }
+              - { label: Badge area middle, name: stage_mid, widget: color }
+              - { label: Badge area bottom, name: stage_bottom, widget: color }
+              - { label: Orb color 1, name: orb_a, widget: color }
+              - { label: Orb color 2, name: orb_b, widget: color }
+              - { label: Orb color 3, name: orb_c, widget: color }
+
+          - label: Layout
+            name: layout
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Max page width (px), name: max_width, widget: number, min: 900, max: 3000, default: 1760 }
+              - { label: Max page height (px), name: max_height, widget: number, min: 640, max: 2000, default: 1120 }
+              - { label: Badge position, name: badge_position, widget: select, options: [center, left, right], default: center }
+              - { label: Text direction, name: direction, widget: select, options: [ltr, rtl], default: ltr }
+
+          - label: 3D and motion
+            name: effects
+            widget: object
+            collapsed: true
+            fields:
+              - { label: 3D tilt strength (0 turns it off), name: tilt_strength, widget: number, value_type: float, min: 0, max: 2, step: 0.1, default: 1 }
+              - { label: Idle motion, name: idle_motion, widget: boolean, default: true }
+              - { label: Badge glass color, name: badge_glass_color, widget: color }
+              - { label: Badge glass opacity, name: badge_glass_opacity, widget: number, value_type: float, min: 0, max: 1, step: 0.02, default: 0.74 }
+              - { label: Badge light sheen, name: badge_sheen, widget: number, value_type: float, min: 0, max: 1, step: 0.05, default: 0.5 }
+              - { label: Badge sway, name: badge_sway, widget: number, value_type: float, min: 0, max: 3, step: 0.1, default: 1 }
+              - { label: Badge drop-in intro, name: badge_intro, widget: boolean, default: true }
+              - { label: Badge size, name: badge_size, widget: number, value_type: float, min: 0.6, max: 1.4, step: 0.05, default: 1 }
+              - { label: Badge follows the pointer, name: badge_follow_pointer, widget: number, value_type: float, min: 0, max: 2, step: 0.1, default: 1 }
+
+          - label: SEO and tab icon
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Page title, name: title, widget: string, required: false }
+              - { label: Description, name: description, widget: text, required: false }
+              - { label: Favicon, name: favicon, widget: image, required: false }
